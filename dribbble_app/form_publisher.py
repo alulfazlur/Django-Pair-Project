@@ -2,15 +2,14 @@ from .models import Blog
 from django import forms
 
 class BlogForm(forms.ModelForm):
-    media = forms.FileField()
+    username = models.ForeignKey(User,on_delete=models.CASCADE)
+    design = models.FileField(upload_to="")
     title = forms.CharField(max_length=200)
-    tags = forms.CharField(widget=forms.Textarea)
-    description = forms.CharField(widget=forms.Textarea)
+    tags = models.CharField(max_length=50)
+    description = models.TextField(blank=False, null=False)
     # setting = forms.IntegerField()
-    attach_file = form.FileField()
-    add_project = form.FileField()
-    for_sale = form.FileField()
+    created_at = models.DateField(default=timezone.now(), blank=True)
     
     class Meta :
-        model = Blog
+        model = form_publisher
         fields = '__all__'
