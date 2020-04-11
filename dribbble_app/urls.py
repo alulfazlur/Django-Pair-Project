@@ -7,6 +7,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 app_name = 'dribbble_app'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('form-publish/', views.formPublish, name='form-publish'),
     
 ]
 urlpatterns += staticfiles_urlpatterns()

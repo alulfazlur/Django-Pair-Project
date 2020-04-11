@@ -125,3 +125,187 @@ footer{
     opacity: 0.3;
 }
 /* footer */
+/* form-publish */
+header{
+    background-color: black;
+    padding-top: 13px;
+    padding-bottom: 2px;
+    margin-bottom: 25px;
+}
+.fp-logo-text{
+    width: 100px;
+    padding-left: 20px;
+}
+.fp-judul{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+.fp-help{
+    text-align: right;
+    font-size: 15px;
+    color: white;
+    opacity: 0.6;
+    padding-right: 20px;
+}
+.fp-border{
+    border: 2px #6e6d7a;
+    border-style: dashed;
+    border-color: #6b688b3d;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+.fp-nohover:hover{
+    text-decoration: none;
+}
+.symbol-media{
+    width: 40px;
+    height:43px;
+    border-radius: 10px;
+    float: left;
+    margin-right: 2px;
+    padding: 5px;
+    opacity: 0.3;
+}
+.fp-paragraf{
+    font-size: 13px;
+    font-weight: lighter;
+    opacity: 0.5;
+    color: black;
+}
+.fp-sub{
+    font-size: 12px;
+    color: black;
+}
+.fp-pict-upload{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    padding-top: 100px;
+    opacity: 0.5;
+    border-radius: 70px;
+}
+.fp-nohover:hover .fp-pict-upload{
+    opacity: 1;
+    padding-top: 60px ;
+    padding-bottom: 40px;
+}
+.fp-text-upload{
+    text-align: center;
+    padding-bottom: 140px;
+    color: black;
+}
+.judul-upload{
+    font-weight: bolder;
+    font-size: 20px;
+}
+.fp-sub-uploader{
+    font-size: 16px;
+    font-weight: lighter;
+}
+.fp-ketentuan-file{
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.fp-browser-pink{
+    color: #ea4c89;
+}
+.fp-multi-shot{
+    font-weight: bold;
+    padding-top: 15px;
+    color: black;
+}
+.fp-form{
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: rgb(238, 238, 238);
+    background-clip: padding-box;
+    border: none;
+    border-radius: 10px;
+}
+.fp-describe{
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 60px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: rgb(238, 238, 238);
+    background-clip: padding-box;
+    border:none;
+    box-shadow: none;
+    border-radius: 10px;
+}
+.nama-label{
+    color: black;
+}
+.fp-close-comments{
+    font-weight: lighter;
+    color: black;
+}
+.fp-tags{
+    font-weight: lighter;
+    color: #ea4c89;
+    font-size: 15px;
+}
+.fp-tombol{
+    border-style: solid ;
+    border-color: #d1d1d1;
+    border-width: 2px;
+    width: 190px;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    display: inline-block;
+    font-weight: 400;
+    color: #979797;
+    text-align: center;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    opacity: 0.5;
+}
+.fp-img-button{
+    width: 25px;
+    opacity: 0.2;
+}
+.fp-img-store{
+    width: 25px;
+    opacity: 0.2;
+    padding-right: 10px;
+}
+.fp-padding-button{
+    padding: 0 0 20px 0;
+    justify-content: center;
+    border-color: rgba(219, 219, 219, 0.164);
+}
+.fp-button{
+    border-style: dashed;
+    background-color: transparent;
+    width: 400px;
+    border-width: 2px;
+    border-color: #d1d1d1;
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgba(163, 163, 163, 0.315);
+    background-color: transparent;
+    display: inline-block;
+    font-weight: 400;
+    color: #c4c4c4;
+    text-align: center;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    opacity: 0.5;
+}
+.fp-last-button{
+    opacity: 0.1;
+}
