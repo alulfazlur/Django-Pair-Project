@@ -6,3 +6,6 @@ def index(request):
 
 def formPublish(request):
     return render(request,'form-publish.html')
+
+def PictureDetail(request):
+    return render(request,'picture-detail.html')

@@ -8,6 +8,7 @@ app_name = 'dribbble_app'
 urlpatterns = [
     path('', views.index, name='index'),
     path('form-publish/', views.formPublish, name='form-publish'),
+    path('picture-detail/', views.PictureDetail, name='picture-detail'),
     
 ]
 urlpatterns += staticfiles_urlpatterns()
