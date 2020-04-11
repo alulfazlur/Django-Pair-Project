@@ -15,12 +15,25 @@ Including another URLconf
 """
 
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+=======
+from django.urls import include, path
+from . import settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+>>>>>>> b7402af40a1d9c63f6879c20bbeed53f74c4349f
 
 urlpatterns = [
+    path("",include('dribbble_app.urls')),
     path('admin/', admin.site.urls),
     path("", include('dribbble_app.urls')),
 ]
 
+<<<<<<< HEAD
+=======
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+>>>>>>> b7402af40a1d9c63f6879c20bbeed53f74c4349f

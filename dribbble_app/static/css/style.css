@@ -1,3 +1,75 @@
+body {
+    font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #6e6d7a !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+}
+header .logo {
+    width: 76px;
+    height: 18,6px;
+}
+.navbar {
+    padding: 0 50px 10px 30px !important;
+}
+
+.border-left {
+    margin-left: 15px;
+    margin-right: 20px;
+    border-left: #6e6d7a;
+}
+.signin{
+    margin-left: 20px;
+    color: #6e6d7a !important;
+    font-weight: 700 !important;
+}
+.btn-pink{
+    background-color: #ea4c89;
+    color: white;
+    padding-right: 10px;
+    margin-left: 20px;
+    border-radius: 10px !important;
+    font-weight: 900 !important;
+}
+.btn-pink:hover{
+    opacity: 50%;
+}
+.signin:hover{
+    text-decoration: none;
+    color: black !important;
+}
+.form-control{
+    margin-top: 10px;
+    width: 150px !important; 
+    border-radius: 8px !important; 
+    border-color: #ffe3ee !important; 
+    border-width: 4px !important;
+    height: 120% !important;
+}
+.form-control:focus{
+    box-shadow: none !important;
+}
+.has-search{
+    padding-top: 10px;
+}
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+.has-search .form-control-feedback {
+    position: absolute;
+    margin-top: 12px;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+
+}
+
+
+/* footer */
 footer{
     border-top: 0.5px solid rgba(128, 128, 128, 0.137);
     padding-top: 30px;
@@ -52,3 +124,4 @@ footer{
 .ads-via{
     opacity: 0.3;
 }
+/* footer */
