@@ -6,3 +6,9 @@ def index(request):
 
 def formPublish(request):
     return render(request,'form-publish.html')
+
+def profile(request):
+    return render(request, 'profile.html', {'homeactive':True})
+
+def user(request):
+    return render(request, 'user.html', {'homeactive':True})
