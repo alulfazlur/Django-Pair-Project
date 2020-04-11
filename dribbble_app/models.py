@@ -1,10 +1,14 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
+<<<<<<< HEAD
 from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+=======
+>>>>>>> b7402af40a1d9c63f6879c20bbeed53f74c4349f
 class User(models.Model):
     fullname = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
