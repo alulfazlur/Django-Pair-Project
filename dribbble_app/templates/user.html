@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Dribbble - Discover The World's Top Designer & Creative Professionals
+{% endblock %}
+
+{% block content %}
+    <section class="user">
+        <div class="container-fluid back-pink" style="margin-left: 0; margin-right: 0; padding-left: 70px;">
+        <div class="row">
+            <div class="col-sm-5 user-detail" style="margin-right: 30px;">
+                <img class="user-pict" src="https://cdn.dribbble.com/users/5119734/avatars/normal/open-uri20200409-23499-1twn9vb?1586428665" style="border-radius: 50%;">
+                <h2>Fazlur Rahman</h2>
+                <h1>UI/UX Design & Development</h1>
+                <div class="mt-5">
+                    <button type="button" class="btn follow">Follow</button>
+                    <button type="button" class="btn hire-me">Hire Me</button>
+                    <button type="button" class="btn btn-outline-secondary user-opt">...</button>
+                </div>
+            </div>
+            <div class="col-sm-7 user-shot" style="max-width: 580px;">
+                <div class="row">
+                    <div class="col">
+                        <div class="shot-holder">
+                            <img class="best-shot" src="https://cdn.dribbble.com/users/518045/screenshots/11007617/media/c5f1c19a2b722eb992257fe4ff8ba1fc.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <nav class="navbar navbar-expand-lg navbar-light" style="padding-right: 20px;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="padding-left: 30px; font-size: 17px; border-bottom: 5px;">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Shots <span>0</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Collections <span>0</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Likes <span>0</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn dropdown-toggle recent-shots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Recent Shots
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" style="font-size: 15px; color: #ea4c89; font-weight: 700;">Recent Shots</a>
+                <a class="dropdown-item" href="#" style="font-size: 15px;">Popular Shots</a>
+            </div>
+        </div>
+    </nav>
+   <section class="design border-top" style="margin: 20px 50px 50px 50px;">
+            <div class="row pt-5">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col">
+                            <div class="design-holder">
+                                <a href="#">
+                                    <img class="design-img" src="https://cdn.dribbble.com/users/5119734/avatars/normal/open-uri20200409-23499-1twn9vb?1586428665" alt="Card image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col">
+                            <div class="design-holder">
+                                <a href="#">
+                                    <img class="design-img" src="https://cdn.dribbble.com/users/5119734/avatars/normal/open-uri20200409-23499-1twn9vb?1586428665" alt="Card image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col">
+                            <div class="design-holder">
+                                <a href="#">
+                                    <img class="design-img" src="https://cdn.dribbble.com/users/5119734/avatars/normal/open-uri20200409-23499-1twn9vb?1586428665" alt="Card image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#" style="color: #ea4c89;">1</a></li>
+          <li class="page-item"><a class="page-link" href="#" style="color: #ea4c89;">2</a></li>
+          <li class="page-item"><a class="page-link" href="#" style="color: #ea4c89;">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" style="color: #ea4c89;">Next</a>
+          </li>
+        </ul>
+    </nav>
+{% endblock %}
