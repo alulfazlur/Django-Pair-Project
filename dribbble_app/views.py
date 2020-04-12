@@ -3,11 +3,13 @@ from .models import Design, User, CommentLike
 from .forms import DesignSearchForm
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
+from django.core.paginator import Paginator
+from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    design = Design.objects.all()[:8]
-    return render(request, 'index.html', {'design':design})
+# def index(request):
+    # design = Design.objects.all()[:4]
+    # return render(request, 'index.html', {'design':design})
 
 def formPublish(request):
     return render(request,'form-publish.html')
@@ -17,8 +19,6 @@ def profile(request):
 
 def user(request):
     return render(request, 'user.html')
-
-
 
 def design(request):
     searchvalue=''
@@ -70,3 +70,11 @@ def designLike(request, id):
     dL = details.like
     Design.objects.filter(pk=id).update(like=dL+1)
     return redirect('/'+str(id)+'/')
+
+def index(request):
+    design_list = Design.objects.all()
+    paginator = Paginator(design_list, 8)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'index.html', {'page_obj': page_obj})

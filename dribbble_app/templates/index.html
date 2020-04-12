@@ -7,7 +7,7 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
 
 {% block content %}
     <section style="background: #F9F8FD">
-        <div class="container pb-5" style="padding-top: 50px; margin: 0 20px 20px 50px;">
+        <div class="container pb-5" style="padding-top: 50px; margin: 0 20px 20px 120px;">
             <div class="row">
                 <div class="col-sm-7 text-content" style="padding-right: 150px;">
                     <h1>Discover the world’s top designers &amp; creatives</h1>
@@ -76,7 +76,7 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
     </nav>
     <section class="design" style="margin: 20px 50px 50px 50px;">
         <div class="row pt-5">
-            {% for design in design %}
+            {% for design in page_obj %}
             <div class="col-sm-3">
                 <div class="row">
                     <div class="col">
@@ -89,14 +89,14 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
                         <div class="design-desc">
                             <a href="#">
                                 <p style="padding-top: 10px;">
-                                    <img class="design-profile-index" src="{{user.avatar.url}}">
+                                    <!-- <img class="design-profile-index" src="{{user.avatar.url}}"> -->
                                     {{design.fullname}}
                                 </p>
                             </a>
                             <p>
                                 <ul style="margin-top: 8px; padding-left: 120px;">
-                                    <li class="fa fa-comment"> 0</li>
-                                    <li class="fa fa-heart"> 0</li>
+                                    <!-- <li class="fa fa-comment"> 0</li> -->
+                                    <li class="fa fa-heart"> {{design.like}}</li>
                                   </ul>
                             </p>
                         </div>
@@ -106,4 +106,25 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
             {% endfor %}
         </div>
     </section>
+    <div class="d-flex justify-content-center">   
+      <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link pagi" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">{{ page_obj.previous_page_number }}</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="page-item pagi"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
+            {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link pagi" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">{{ page_obj.next_page_number }}</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+  </div>
 {% endblock %}
