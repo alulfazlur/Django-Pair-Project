@@ -23,7 +23,7 @@ Picture Detail
                                 </div>
                                 <div class="col-sm-6 pd-like-comment">
                                     <a style="text-decoration : none" class="dp-tombol" href="#"><img class="pd-img-button" src="{% static 'images/media/save.png'%}"><strong>Save</strong></a>
-                                    <a style="text-decoration : none" class="dp-tombol" href="#"><img class="pd-img-button" src="{% static 'images/media/like.png'%}"><strong>Like</strong></a>
+                                    <a style="text-decoration : none" class="dp-tombol" href="/like/{{designs.id}}"><img class="pd-img-button" src="{% static 'images/media/like.png'%}"><strong>Like</strong></a>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ Picture Detail
                     <div class="col-sm-8">
                         
                         <div>
-                            <img class="pd-picture" src="{% static 'images/media/logo3.jpg'%}">
+                            <img class="pd-picture" src="{{designs.design.url}}">
                         </div>
     
                         <div class="container-fluid">
@@ -71,23 +71,23 @@ Picture Detail
                                             </div>
                                         </div>
                                     </div> 
-                                    {% for comment in comment%}
+                                    {% for komen in designs.commentlike_set.all %}
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-1">
-                                                <a><img class="pd-pict-profil-comment" src="{{ comment.avatar.url }}"></a>
+                                                <a><img class="pd-pict-profil-comment" src="{{ komen.avatar.url }}"></a>
                                             </div>
                                             <div class="col-sm-11">
-                                                <a style="text-decoration : none" href="#"><p class="pd-profil-comment">{{comment.name}}</p></a>
-                                                <p class="pd-komen">{{comment.comment}}</p>
+                                                <a style="text-decoration : none" href="#"><p class="pd-profil-comment">{{komen.name}}</p></a>
+                                                <p class="pd-komen">{{komen.comment}}</p>
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-sm-10">
-                                                            <p class="pd-date-like"><a style="text-decoration : none" href="#" class="pd-date-like">{{comment.created_at}} | '</a>
+                                                            <p class="pd-date-like"><a style="text-decoration : none" href="#" class="pd-date-like">{{komen.created_at}} | '</a>
                                                                 <a style="text-decoration : none" href="#" class="pd-date-like"> Like?</a></p>
                                                         </div>
                                                         <div class="col-sm-2 pd-comment-count">
-                                                            <img class="pd-love-comment"src="{% static 'images/media/like.png'%}"><p>{{comment.like}}</p>
+                                                            <img class="pd-love-comment"src="{% static 'images/media/like.png'%}"><p>{{komen.like}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -148,7 +148,7 @@ Picture Detail
                                                 <img class="pd-tag" src="{% static 'images/media/love.png'%}">
                                             </div>
                                             <div class="col-sm-10">
-                                                <p>556 likes</p>
+                                                <p>{{designs.like}} likes</p>
                                             </div>
                                         </div>
                                         <div class="row">
