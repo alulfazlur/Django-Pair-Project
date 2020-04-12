@@ -201,6 +201,18 @@ footer{
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
    }
+.bottom-left{
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: white;
+}
+.page-link {
+    color: #979797 !important;
+}
+.pagi{
+    color: #ea4c89 !important;
+}
 
 
 /* profile page */
