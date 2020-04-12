@@ -15,7 +15,6 @@ class User(models.Model):
         return self.username + ' : ' + self.email
 
 class UserDesign(models.Model):
-    username = models.ForeignKey(User,on_delete=models.CASCADE)
     design = models.FileField(upload_to="")
     title = models.CharField(max_length=50)
     tags = models.CharField(max_length=50)
@@ -24,31 +23,12 @@ class UserDesign(models.Model):
 
     def __str(self):
         return self.username + ' : ' + self.title
-
-class DesignComment(models.Model):
-    username = models.ForeignKey(User,on_delete=models.CASCADE)
-    title = models.ForeignKey(UserDesign,on_delete=models.CASCADE)
-    comment = models.TextField(blank=False, null=False)
-    username_post = models.CharField(max_length=50)
-
-    def __str(self):
-        return self.username + ' - ' + self.title + ', Commented by : ' + self.username_post 
-
-class DesignLike(models.Model):
-    username = models.ForeignKey(User,on_delete=models.CASCADE)
-    title = models.ForeignKey(UserDesign,on_delete=models.CASCADE)
-    like = models.IntegerField(default=1)
-    username_comment = models.CharField(max_length=50)
-
-    def __str(self):
-        return self.username + ' - ' + self.title + ', Liked by : ' + self.username_comment
-
 class CommentLike(models.Model):
-    username = models.ForeignKey(User,on_delete=models.CASCADE)
-    title = models.ForeignKey(UserDesign,on_delete=models.CASCADE)
-    comment = models.ForeignKey(DesignComment,on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    avatar = models.FileField(upload_to="", default ='AVATAR.png')
+    comment = models.TextField(blank=False, null=False)
     like = models.IntegerField(default=1)
-    username_like = models.CharField(max_length=50)
+    created_at = models.DateField(default=timezone.now(), blank=True)
 
     def __str(self):
-        return self.username + ' - ' + self.comment + ', Liked by : ' + self.username_like
+        return self.name

@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>{% block title %}
+        Upload
             {% endblock %}
     </title>
 </head>
@@ -21,13 +22,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-4">
-                        <img class="fp-logo-text" src="{%static 'images/form-publish/logo-white-dribbble-text.png'%}">
+                        <a class="fp-logo-active" href="#"><img class="fp-logo-text" src="{%static 'images/form-publish/logo-white-dribbble-text.png'%}"></a>
                     </div>
                     <div class="col-sm-4">
                         <h1 class="fp-judul">Publish your Shot</h1>
                     </div>
                     <div class="col-sm-4">
-                        <p class="fp-help">Help</p>
+                        <a style="text-decoration : none" href="#"><p class="fp-help">Help</p></a>
                     </div>
                 </div>
             </div>
@@ -71,6 +72,18 @@
                     </div>
                     </a>
                     <p class="fp-multi-shot">Multi-Shot</p>
+                    <div>
+                        <ul class="list-unstyled fp-display">
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                            <a href="#"><li class="fp-boarder-multi"></li></a>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
@@ -78,7 +91,7 @@
     </section>
 
 <!-- form -->
-    <section>
+    <section class="fp-section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4"></div>
@@ -134,9 +147,21 @@
                 <div class="col-sm-4"></div>
                 <br>
                 <br>
-                c
+                
             </div>
         </div>
     </section>
+    <footer class="fp-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="#"><img class="fp-logo-text" src="{%static 'images/form-publish/logo-white-dribbble-text.png'%}"></a>
+                </div>
+                <div class="col-sm-6">
+                    <p class="fp-footer-paragraf">© 2020 Dribbble. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
