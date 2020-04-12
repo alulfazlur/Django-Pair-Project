@@ -25,6 +25,7 @@ class Design(models.Model):
         return self.title
         
 class CommentLike(models.Model):
+    design = models.ForeignKey(Design, on_delete=models.CASCADE, null= True, blank = True)
     name = models.CharField(max_length=50)
     avatar = models.FileField(upload_to="", default ='AVATAR.png')
     comment = models.TextField(blank=False, null=False)
