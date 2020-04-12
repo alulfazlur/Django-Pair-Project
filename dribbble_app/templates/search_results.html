@@ -76,14 +76,13 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
     </nav>
     <section class="design" style="margin: 20px 50px 50px 50px;">
         <div class="row pt-5">
-            {% for design in design %}
+            {% for design in object_list %}
             <div class="col-sm-3">
                 <div class="row">
                     <div class="col">
                         <div class="design-holder-index">
-                            <a href="{{design.pk}}">
+                            <a href="#">
                                 <img class="design-img-index" src="{{design.design.url}}">
-                                <div class="bottom-left">{{design.title}}</div>
                             </a>
                         </div>
                         <div class="design-desc">
