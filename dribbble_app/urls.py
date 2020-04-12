@@ -10,7 +10,8 @@ urlpatterns = [
     path('form-publish/', views.formPublish, name='form-publish'),
     path('profile/', views.profile, name='profile'),
     path('user/', views.user, name='user'),
-    path('picture-detail/', views.PictureDetail, name='picture-detail'),
+    path('picture-detail<int:userdesign_id>/', views.PictureDetail, name='picture-detail'),
+    path('picture-detail/', views.PictureDetail, name='picture-detail')
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

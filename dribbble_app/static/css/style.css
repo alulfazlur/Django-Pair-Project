@@ -73,6 +73,7 @@ header .logo {
 footer{
     border-top: 0.5px solid rgba(128, 128, 128, 0.137);
     padding-top: 30px;
+    margin-top: 100px;
     line-height: 25px;
     font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;    
 }
@@ -322,12 +323,20 @@ footer{
 .fp-logo-text{
     width: 100px;
     padding-left: 20px;
+    opacity: 0.6;
 }
 .fp-judul{
     font-size: 20px;
     text-align: center;
     color: white;
     font-weight: bolder;
+    opacity: 0.6;
+}
+.fp-logo-text:hover{
+    opacity: 1;
+}
+.fp-logo-active{
+    border: transparent;
 }
 .fp-help{
     text-align: right;
@@ -335,6 +344,9 @@ footer{
     color: white;
     opacity: 0.6;
     padding-right: 20px;
+}
+.fp-help:hover{
+    opacity: 1;
 }
 .fp-border{
     border: 2px #6e6d7a;
@@ -405,6 +417,19 @@ footer{
     font-weight: bold;
     padding-top: 15px;
     color: black;
+}
+.fp-display{
+    display: flex;
+}
+.fp-boarder-multi{
+    box-sizing: border-box;
+    border: 2px #6b688b3d;
+    width: 94px;
+    height: 94px;
+    margin-left: 11px;
+    border-style: dashed;
+    border-radius: 5px;
+    opacity: 0.5;
 }
 .fp-form{
     display: block;
@@ -495,4 +520,166 @@ footer{
 }
 .fp-last-button{
     opacity: 0.1;
+}
+.fp-section{
+    margin-bottom: 200px;
+    padding-top: 50px;
+}
+.fp-footer{
+    background-color: #070707;
+    padding: 20px 0 5px 0;
+}
+.fp-footer-paragraf{
+    color: white;
+    margin-left: 20px;
+    font-weight: lighter;
+    text-align: right;
+}
+/* picture-detail */
+.pd-pict-profil{
+    width: 60px;
+    border-radius: 50px;
+}
+.pd-picture{
+    width:100%;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top:-26px;
+}
+.dp-save-button{
+    width: 25px;   
+}
+.pd-like-comment{
+    align-content: center;
+    justify-content: right;
+    display: flex;
+    height: 40px;
+}
+.dp-tombol{
+    border-style: solid ;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: rgb(221, 221, 221);
+    display: inline-block;
+    font-weight: 400;
+    color: #070707;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    text-align: center;
+    margin-left: 5px;
+}
+.pd-img-button{
+    width: 30px;
+    padding-right: 10px;
+}
+.pd-desc-pict{
+    font-weight: lighter;
+    margin-top: 20px;
+}
+.pd-comment-sorter{
+    font-size: 13px;
+    color: #747474;
+    opacity: 0.5;
+}
+.pd-respons{
+    margin-left: -20px;
+}
+.pd-text-komen{
+    background-color: #ebebeb;
+}
+.pd-submit-komen{
+    border: 1px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #c4c4c4;
+}
+.pd-pict-profil-comment{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: -20px;
+}
+.pd-profil-comment{
+    color: #070707;
+    vertical-align: middle;
+    padding-top: 5px;
+    font-size: 16px;
+}
+.pd-komen{
+    font-weight: lighter;
+    color: black;
+    font-size: 14px;
+}
+.pd-date-like{
+    font-size: 12px;
+    color: #aaa;
+    margin-left: -7px;
+}
+.pd-love-comment{
+    width: 20px;
+    float: left;
+}
+.pd-comment-count{
+    opacity: 0.5;
+}
+.pd-info-detail{
+    align-content: center;
+    justify-content: right;
+}
+.pd-sosmed{
+    border-style: solid ;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    font-size: 13px;
+    background-color: rgb(221, 221, 221);
+    display: inline-block;
+    color: #070707;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    text-align: center;
+}
+.pd-logo-sosmed{
+    width: 22px;
+    padding-right: 5px;
+    margin-top: -5px;
+}
+.pd-tag{
+    width: 20px;
+}
+.pd-user-work{
+    opacity: 0.5;
+    color: #070707;
+    font-weight: lighter;
+}
+.pd-color{
+    color: transparent;
+    font-size: 13px;
+}
+.pd-color:hover{
+    font-size: 18px;
+    color: transparent;
+    position: absolute;
+}
+.pd-more-design{
+    font-size: 17px;
+    font-weight: bold;
+    color: #070707;
+}
+.pd-nounderline:hover .pd-more-design{
+    color: #070707;
+    opacity: 0.5;
+}
+.pd-more-pict{
+    width:140px;
+    height: 110px;
+    border-radius: 20px;
+    padding: 5px;
+}
+.pd-more-pict:hover{
+    opacity: 0.5;
 }
