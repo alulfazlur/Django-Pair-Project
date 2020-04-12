@@ -8,6 +8,12 @@ def index(request):
 def formPublish(request):
     return render(request,'form-publish.html')
 
+def profile(request):
+    return render(request, 'profile.html')
+
+def user(request):
+    return render(request, 'user.html')
+
 def PictureDetail(request):
     # pict_detail = CommentLike.objects.all()
     # desain = UserDesign.objects.all()
