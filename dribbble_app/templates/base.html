@@ -18,7 +18,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'dribbble_app:index' %}">
                 <img src="{% static 'images/dirbbble_logo.png' %}" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +54,10 @@
                   </li>
               </ul>
               <div class="form-group has-search">
-                <span class="fa fa-search form-control-feedback"></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <form action="{% url 'dribbble_app:search_results' %}" method="get">
+                    <span class="fa fa-search form-control-feedback" style="margin-top: 4px;"></span>
+                    <input name="q" type="text" class="form-control" placeholder="Search">
+                </form>
               </div>
               <a href="" class="signin">Sign In</a>
               <button type="button" class="btn btn-pink">Sign Up</button>
