@@ -550,6 +550,7 @@ footer{
 /* picture-detail */
 .pd-pict-profil{
     width: 60px;
+    height: 60px;
     border-radius: 50px;
 }
 .pd-picture{

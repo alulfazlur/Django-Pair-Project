@@ -21,6 +21,9 @@ class Design(models.Model):
     created_at = models.DateField(default=timezone.now(), blank=True)
     like = models.IntegerField(default=0)
 
+    class Meta:
+        ordering = ['-id']
+
     def __str(self):
         return self.title
         
@@ -31,6 +34,9 @@ class CommentLike(models.Model):
     comment = models.TextField(blank=False, null=False)
     like = models.IntegerField(default=1)
     created_at = models.DateField(default=timezone.now(), blank=True)
+
+    class Meta:
+        ordering = ['-id']
 
     def __str(self):
         return self.name

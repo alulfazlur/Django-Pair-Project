@@ -51,20 +51,24 @@ class SearchResultsView(ListView):
 def detail(request, id):
     designs = get_object_or_404(Design, pk=id)
     user = get_object_or_404(User, pk=1)
-    # comment = CommentLike.objects.all()
+    ava = get_object_or_404(User, fullname=designs.fullname)
+    
     
     if request.method == 'POST':
         cm = CommentLike.objects.create(
             name = "anonymous",
             design = Design.objects.get(pk=id),
-            comment = request.POST.get('tulis-komen')
+            comment = request.POST.get('tulis-komen'),
         )
         cm.save()        
-     
-    return render(request,'picture-detail.html', {
-        'post_active':True, 'designs':designs})
     
-    # return render(request, 'picture-detail.html', {'detail':detail})
+    obj = CommentLike.objects.first()
+    field_value = getattr(obj, 'design')
+    count = CommentLike.objects.filter(design=field_value).count()
+    
+    return render(request,'picture-detail.html', {
+        'post_active':True, 'designs':designs, 'count':count, 'ava':ava})
+    
 def designLike(request, id):
     details = get_object_or_404(Design, pk=id)
     dL = details.like
@@ -72,8 +76,8 @@ def designLike(request, id):
     return redirect('/'+str(id)+'/')
 
 def index(request):
-    design_list = Design.objects.all()
-    paginator = Paginator(design_list, 8)
+    design_list = Design.objects.all().order_by('-id')
+    paginator = Paginator(design_list, 4)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
