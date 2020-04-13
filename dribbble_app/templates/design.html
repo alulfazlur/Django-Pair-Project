@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search</title>
+</head>
+<body>
+
+
+
+<h1>Videos</h1>
+<form action="" method="POST">
+{% csrf_token %}
+{{ form.as_table }}
+<input name='q' type="submit" value="Search"/>
+</form>
+
+<br><br>
+<table border="1" width="600">
+<tr>
+<td>Name</td>
+<td>Description</td>
+<td>Design</td>
+</tr>
+
+{% for design in searchresults %}
+<tr>
+<td>{{ design.title}}</td>
+<td>
+{{ design.description }}</td>
+<td><img width='400' source src='{{ design.design.url }}'>
+</img>
+</td>
+</tr>
+{% endfor %}
+</table>

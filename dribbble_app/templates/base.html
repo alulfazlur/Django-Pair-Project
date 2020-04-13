@@ -4,6 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css'}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +18,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'dribbble_app:index' %}">
                 <img src="{% static 'images/dirbbble_logo.png' %}" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,8 +54,10 @@
                   </li>
               </ul>
               <div class="form-group has-search">
-                <span class="fa fa-search form-control-feedback"></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <form action="{% url 'dribbble_app:search_results' %}" method="get">
+                    <span class="fa fa-search form-control-feedback" style="margin-top: 4px;"></span>
+                    <input name="q" type="text" class="form-control" placeholder="Search">
+                </form>
               </div>
               <a href="" class="signin">Sign In</a>
               <button type="button" class="btn btn-pink">Sign Up</button>
@@ -76,14 +79,14 @@
                   <div><p class="footer_paragraf">What are you working on? Dribbble is a 
                           community of designers sharing screenshots 
                           of their work, process, and projects</p>
-                      <div>
-                          <img class="logo-sosmed" src="{% static 'images/logo-footer/ball-logo-black-white.png'%}">
-                          <img class="logo-sosmed" src="{% static 'images/logo-footer/logo-twitter-black-white.png'%}">
-                          <img class="logo-sosmed" src="{% static 'images/logo-footer/logo-facebook-black-white.png'%}">
-                          <img class="logo-sosmed" src="{% static 'images/logo-footer/logo-instagram-black-white.png'%}">
-                          <img class="logo-sosmed" src="{% static 'images/logo-footer/logo-browser-black-white.png'%}">      
-                      </div>
-                      <br>
+                        <div>
+                            <a href="https://dribbble.com/dribbble"><img class="logo-sosmed" src="{% static 'images/logo-footer/ball-logo-black-white.png'%}"></a>
+                            <a href="https://twitter.com/dribbble"><img class="logo-sosmed" src="{% static 'images/logo-footer/logo-twitter-black-white.png'%}"></a>
+                            <a href="https://www.facebook.com/dribbble"><img class="logo-sosmed" src="{% static 'images/logo-footer/logo-facebook-black-white.png'%}"></a>
+                            <a href="https://www.instagram.com/dribbble/"><img class="logo-sosmed" src="{% static 'images/logo-footer/logo-instagram-black-white.png'%}"></a>
+                            <a href="https://dribbble.com/stories"><img class="logo-sosmed" src="{% static 'images/logo-footer/logo-browser-black-white.png'%}"></a>
+                        </div>
+                        <br>
                   </div>
               </div>
 

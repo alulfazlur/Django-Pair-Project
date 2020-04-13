@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Picture Detail 
+{% endblock %}
+
+{% block content %}
+
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <a class="pd-pict-profil"><img class="pd-pict-profil" src="{{ava.avatar.url}}"></a>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h3 class="pd-dayOfType">{{designs.title}}</h3>
+                                    <p>by<a style="text-decoration : none" href="{{'profile.html'}}"> {{designs.fullname}}</a>  | Follow</p>
+                                </div>
+                                <div class="col-sm-6 pd-like-comment">
+                                    <a style="text-decoration : none" class="dp-tombol" href="#"><img class="pd-img-button" src="{% static 'images/media/save.png'%}"><strong>Save</strong></a>
+                                    <a style="text-decoration : none" class="dp-tombol" href="/like/{{designs.id}}"><img class="pd-img-button" src="{% static 'images/media/like.png'%}"><strong>Like</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        
+                        <div>
+                            <img class="pd-picture" src="{{designs.design.url}}">
+                        </div>
+    
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <p class="pd-desc-pict">{{designs.description}}
+                                    </p>
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label class="nama-label">Add Comment</label>
+                                            <textarea class="fp-describe pd-text-komen" rows="3" placeholder="Add your comment here" name="tulis-komen" required></textarea>
+                                            <input class="pd-submit-komen" type="submit" value="comment">
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <p class="pd-respons">{{count}} Responses</p>
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                            <div class="col-sm-4">
+                                                <a style="text-decoration : none" class="pd-comment-sorter" href="#">oldest</a>
+                                                <a style="text-decoration : none" class="pd-comment-sorter" href="#">newest</a>
+                                                <a style="text-decoration : none" class="pd-comment-sorter" href="#">liked</a>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    {% for komen in designs.commentlike_set.all %}
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <a><img class="pd-pict-profil-comment" src="{{ komen.avatar.url }}"></a>
+                                            </div>
+                                            <div class="col-sm-11">
+                                                <a style="text-decoration : none" href="#"><p class="pd-profil-comment">{{komen.name}}</p></a>
+                                                <p class="pd-komen">{{komen.comment}}</p>
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-sm-10">
+                                                            <p class="pd-date-like"><a style="text-decoration : none" href="#" class="pd-date-like">{{komen.created_at}} | '</a>
+                                                                <a style="text-decoration : none" href="#" class="pd-date-like"> Like?</a></p>
+                                                        </div>
+                                                        <div class="col-sm-2 pd-comment-count">
+                                                            <img class="pd-love-comment"src="{% static 'images/media/like.png'%}"><p>{{komen.like}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    {%endfor%}
+                                </div>
+                                <div class="col-sm-5 pd-info-detail">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a style="text-decoration : none" class="pd-sosmed" href="#"><img class="pd-logo-sosmed" src="{% static 'images/media/pint.png'%}"><strong>Pin</strong></a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a style="text-decoration : none" class="pd-sosmed" href="#"><img class="pd-logo-sosmed" src="{% static 'images/media/twit.png'%}"><strong>Tweet</strong></a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a style="text-decoration : none" class="pd-sosmed" href="#"><img class="pd-logo-sosmed" src="{% static 'images/media/url.png'%}"><strong>Copy</strong></a>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pd-user-work">
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <img class="pd-tag" src="{% static 'images/media/tag.png'%}">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <p>{{designs.tags}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <img class="pd-tag" src="{% static 'images/media/color.png'%}">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <ul class="list-unstyled d-flex">
+                                                    <li>
+                                                        <a class="pd-color" style="background-color: rgb(248, 2, 133)" href="#">'#60535A'</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pd-color" style="background-color: rgb(38, 189, 38)" href="#">#60535A</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pd-color" style="background-color: rgb(23, 184, 184)" href="#">#60535A</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pd-color" style="background-color: rgb(27, 13, 156)" href="#">#60535A</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pd-color" style="background-color: rgb(184, 15, 15)" href="#">#60535A</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <img class="pd-tag" src="{% static 'images/media/love.png'%}">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <p>{{designs.like}} likes</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <img class="pd-tag" src="{% static 'images/media/folder.png'%}">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <p>90 saves</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <img class="pd-tag" src="{% static 'images/media/date.png'%}">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <p>{{designs.created_at}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <a class="pd-nounderline" style="text-decoration : none" href="#">
+                                            <p class="pd-more-design">More from Outcrowd</p>
+                                        </a>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <a href="#"><img class="pd-more-pict" src="{%static 'images/media/logo1.jpg'%}"></a>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <a href="#"><img class="pd-more-pict" src="{%static 'images/media/logo2.jpg'%}"></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <a href="#"><img class="pd-more-pict" src="{%static 'images/media/logo3.jpg'%}"></a>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <a href="#"><img class="pd-more-pict" src="{%static 'images/media/logo4.jpg'%}"></a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

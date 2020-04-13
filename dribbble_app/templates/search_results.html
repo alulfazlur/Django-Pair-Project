@@ -76,14 +76,13 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
     </nav>
     <section class="design" style="margin: 20px 50px 50px 50px;">
         <div class="row pt-5">
-            {% for design in page_obj %}
+            {% for design in object_list %}
             <div class="col-sm-3">
                 <div class="row">
                     <div class="col">
                         <div class="design-holder-index">
-                            <a href="{{design.pk}}">
+                            <a href="../{{design.pk}}">
                                 <img class="design-img-index" src="{{design.design.url}}">
-                                <div class="bottom-left">{{design.title}}</div>
                             </a>
                         </div>
                         <div class="design-desc">
@@ -106,25 +105,4 @@ Dribbble - Discover The World's Top Designer & Creative Professionals
             {% endfor %}
         </div>
     </section>
-    <div class="d-flex justify-content-center">   
-      <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            {% if page_obj.has_previous %}
-            <li class="page-item">
-              <a class="page-link pagi" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                <span aria-hidden="true">{{ page_obj.previous_page_number }}</span>
-              </a>
-            </li>
-            {% endif %}
-            <li class="page-item pagi"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
-            {% if page_obj.has_next %}
-            <li class="page-item">
-              <a class="page-link pagi" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">{{ page_obj.next_page_number }}</span>
-              </a>
-            </li>
-            {% endif %}
-          </ul>
-        </nav>
-  </div>
 {% endblock %}
