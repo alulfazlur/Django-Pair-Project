@@ -1,3 +1,3 @@
 # Dribbble Clone
 
-Make a Dribble Cone with Django
+Make a Dribbble Cone with Django
