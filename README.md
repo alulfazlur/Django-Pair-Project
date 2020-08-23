@@ -1,2 +1,3 @@
-# Django-Pair-Project
-Tugas Django Pair Project Yopi dan Alul
+# Dribbble Clone
+
+Make a Dribble Cone with Django
